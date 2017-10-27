@@ -1,18 +1,25 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <title>live cam 接收页面</title>
+    <title>直播测试</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="keywords" content="雷哥网留学GMAT托福雅思双11大促">
+    <meta name="description" content="雷哥网留学GMAT托福雅思双11大促">
+    <script src="//qzonestyle.gtimg.cn/open/qcloud/video/live/h5/live_connect.js" charset="utf-8"></script>;
 </head>
 <body>
-    <img id="receiver" style="width:320px;height:240px"/>
-    <br><br>bb直播间
-    <script type="text/javascript" charset="utf-8">
-        var receiver_socket = new WebSocket("ws://101.201.121.78:8008");
-        var image = document.getElementById('receiver');
-        receiver_socket.onmessage = function(data)
-        {
-            image.src=data.data;
-        }
-    </script>
+<div id="id_video_container" style="width:100%; height:auto;"></div>
 </body>
 </html>
+<script type="text/javascript">
+    var option = {
+        "live_url" : "http://13272.liveplay.myqcloud.com/live/13272_80486feb6c.m3u8",
+        "live_url2" : "http://13272.liveplay.myqcloud.com/live/13272_80486feb6c.flv",
+        "width" : 480,
+        "height" : 320
+
+//...可选填其他属性
+    };
+
+    var player = new qcVideo.Player("id_video_container", option);
+</script>
